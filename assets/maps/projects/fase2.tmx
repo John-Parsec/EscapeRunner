@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="18">
+ <editorsettings>
+  <export target="../fase2.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="hell" tilewidth="32" tileheight="32" tilecount="240" columns="16">
+  <image source="../../images/PrtHell.png" width="512" height="480"/>
+ </tileset>
+ <layer id="1" name="Blocos" width="20" height="20">
+  <data encoding="csv">
+17,18,17,18,17,18,1,1,1,1,1,1,1,1,17,18,17,18,17,18,
+33,34,33,34,33,34,1,1,1,1,1,1,1,1,33,34,33,34,33,34,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,71,72,1,1,1,1,1,1,1,1,1,1,1,1,71,72,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,71,72,1,1,1,71,72,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+2,1,71,72,1,1,1,1,1,1,1,1,1,1,1,1,71,72,1,2,
+2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,
+111,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,22,
+111,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,22,
+17,18,17,18,17,18,17,18,17,18,17,18,17,18,17,18,17,18,17,18,
+33,34,33,34,33,34,33,34,33,34,33,34,33,34,33,34,33,34,33,34
+</data>
+ </layer>
+ <objectgroup id="2" name="Wall">
+  <object id="1" x="0" y="0" width="192" height="64"/>
+  <object id="2" x="448" y="0" width="192" height="64"/>
+  <object id="3" x="608" y="64" width="32" height="512"/>
+  <object id="4" x="0" y="576" width="640" height="64"/>
+  <object id="5" x="64" y="256" width="64" height="32"/>
+  <object id="7" x="192" y="352" width="64" height="32"/>
+  <object id="8" x="64" y="448" width="64" height="32"/>
+  <object id="9" x="352" y="352" width="64" height="32"/>
+  <object id="10" x="512" y="256" width="64" height="32"/>
+  <object id="11" x="512" y="448" width="64" height="32"/>
+  <object id="12" x="0" y="64" width="32" height="448"/>
+ </objectgroup>
+ <objectgroup id="3" name="Final">
+  <object id="14" x="0" y="512" width="32" height="64"/>
+ </objectgroup>
+</map>
