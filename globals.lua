@@ -95,8 +95,13 @@ Signal  = require 'libs.signal'
 Inspect = require 'libs.inspect'
 Camera  = require 'libs.camera'
 Timer   = require 'libs.timer'
-
+Classe = require "libs.classic"
 Sti =  require 'libs.sti'
+WR = require 'libs.windfield'
+
+
+
+Player = require 'player.player'
 
 States = {
     game = require 'states.game',
