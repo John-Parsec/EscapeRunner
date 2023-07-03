@@ -98,10 +98,9 @@ Timer   = require 'libs.timer'
 Classe = require "libs.classic"
 Sti =  require 'libs.sti'
 WR = require 'libs.windfield'
+anim8 = require "libs.anim8"
 
 
-
-Player = require 'player.player'
 
 States = {
     game = require 'states.game',
@@ -110,3 +109,4 @@ States = {
     game_over = require'states.game_over',
 }
 
+Player = require 'player.player'

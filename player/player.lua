@@ -1,25 +1,51 @@
-local player = {}
+local player = {
+    x = 0,
+    y = 0,
+    speed = 200,
+}
 
-function player:init()
-    player.x = 0
-    player.y = 0
-    player.speed = 5
-    player.spriteSheet = love.graphics.newImage('assets/images/Quote.png')
-    player.grid = anim8.newGrid( 32, 32, player.spriteSheet:getWidth(), player.spriteSheet:getHeight() )
+local spriteSheet = love.graphics.newImage('assets/images/Quote.png')
+local grid = anim8.newGrid( 32, 32, spriteSheet:getWidth(), spriteSheet:getHeight() )
 
-    player.animations = {}
-    player.animations.left = anim8.newAnimation( player.grid('1-3', 1), 0.2 )
-    player.animations.right = anim8.newAnimation( player.grid('1-3', 2), 0.2 )
+local animations = {
+    left = anim8.newAnimation( grid('1-3', 1), 0.2 ),
+    right = anim8.newAnimation( grid('1-3', 2), 0.2 )
+}
 
-    player.anim = player.animations.right
+local anim = animations.right
+
+
+function updatePlayer(dt)
+    if love.keyboard.isDown("left") then
+        player.x = player.x - player.speed * dt
+    end
+
+    if love.keyboard.isDown("right") then
+        player.x = player.x + player.speed * dt
+    end
+
+    if love.keyboard.isDown("up") then
+        player.y = player.y - player.speed * dt
+    end
+
+    if love.keyboard.isDown("down") then
+        player.y = player.y + player.speed * dt
+    end
+
+    anim:update(dt)
 end
 
-function player:update(dt)
-
+function drawPlayer()
+    anim:draw(spriteSheet, player.x, player.y)
 end
 
-function player:draw()
-    player.anim:draw(player.spriteSheet, player.x, player.y)
+function getPosition()
+    return player.x, player.y
 end
 
-return player
+return {
+    player,
+    getPosition = getPosition,
+    update = updatePlayer,
+    draw = drawPlayer
+}

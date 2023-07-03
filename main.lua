@@ -15,17 +15,13 @@ function love.load()
     end
 
     State.registerEvents(callbacks)
-    State.switch(States.game)
+    State.switch(States.menu)
 
     if DEBUG then
         local loadTimeEnd = love.timer.getTime()
         local loadTime = (loadTimeEnd - loadTimeStart)
         print(("Loaded game in %.3f seconds."):format(loadTime))
     end
-
-
-
-    -- My code
     
 
 end
