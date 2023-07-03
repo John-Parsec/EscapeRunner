@@ -1,27 +1,34 @@
 local about = {}
 
-function about:init()
-
+function about.update(dt)
+    if love.keyboard.isDown("escape") then
+        State.switch(States.menu)
+    end
 end
 
-function about:enter()
+function about.draw()
+    love.graphics.setColor(1, 1, 1)
 
-end
+    local credits = {
+        "Este é um jogo homenagem a Cave Story",
+        "Desenvolvedor: João 'John Parsec' Manoel A. oliveira",
+        "Música: Studio Pixel",
+        "Arte: Studio Pixel",
+        "Trabalho de: TAC I - Jogos",
+        "Professor responsavel: Elinaldo"
+    }
 
-function about:update(dt)
+    local screenWidth = love.graphics.getWidth()
+    local screenHeight = love.graphics.getHeight()
+    local startY = (screenHeight - (#credits * love.graphics.getFont():getHeight() + (#credits - 1) * 10)) / 2
 
-end
-
-function about:keypressed(key, code)
-
-end
-
-function about:mousepressed(x, y, mbutton)
-
-end
-
-function about:draw()
-
+    for i, text in ipairs(credits) do
+        local textWidth = love.graphics.getFont():getWidth(text)
+        local textX = (screenWidth - textWidth) / 2
+        local textY = startY + (i - 1) * (love.graphics.getFont():getHeight() + 10)
+        love.graphics.print(text, textX, textY)
+    end
 end
 
 return about
+

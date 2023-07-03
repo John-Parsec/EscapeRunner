@@ -104,9 +104,10 @@ anim8 = require "libs.anim8"
 
 States = {
     game = require 'states.game',
-    menu = require'states.menu',
-    about = require'states.about',
+    menu = require 'states.menu',
+    about = require 'states.about',
+    tierlist = require 'states.tierlist',
     game_over = require'states.game_over',
+    finals = require'states.final',
 }
 
-Player = require 'player.player'
